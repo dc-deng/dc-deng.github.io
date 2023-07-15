@@ -100,6 +100,18 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# hexo-word-counter
+## https://github.com/next-theme/hexo-word-counter
+symbols_count_time:
+    symbols: true
+    time: true
+    total_symbols: false
+    total_time: false
+    exclude_codeblock: true
+    awl: 2
+    wpm: 300
+    suffix: "mins."
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 
