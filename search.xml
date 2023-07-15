@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>耗时两天，终于，终于，终于把博客初步搭好了！一些必要的插件，比如公式书写，字数统计都装好了！之后再慢慢完善吧。</p>
+<p>搭建好博客的代价就是，整整两天，文章进度几乎为 0 = =
+。。。希望明天能把文字稿都写好吧，画图可能还要一天。比原计划（13
+号前搞定）已经迟了好久了，希望至少在 18
+号前完成吧。我是属于研二结束才堪堪达到了大佬们本科大三的进度，真是失败啊。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+        <category>二零二三</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/07/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="显示公式测试">显示公式测试</h2>
+<ul>
+<li>行内公式：$ a=1 $。</li>
+</ul>
+<p><span class="math display">\[b=1\]</span></p>
+<ul>
+<li>行间公式： <span class="math display">\[
+\begin{equation}
+    \begin{split}
+        E_\theta &amp;= 2\sqrt{2}E_0r\frac{w_0}{w(x)^2}\exp\left[
+-\frac{r^2}{w(x)^2} \right]\\
+        &amp;\times f(t)\exp\left\{ i\left[ kx - \omega t - 2\phi(x) +
+\frac{kr^2}{2R(x)} \right] \right\}.
+    \end{split}
+\end{equation}
+\]</span></li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
