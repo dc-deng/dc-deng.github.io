@@ -13,5 +13,5 @@ sticky: 1
 注意：
 
 - `latex-notes`文件夹放在`/source`里，加了个`index.md`，相当于是一个“隐藏的页面”。
-- 插入格式类似于：`/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf`，**路径不能出现中文！**
+- 插入格式类似于：`{% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %}`，**路径不能出现中文！**
 - 右键即可保存 pdf。
