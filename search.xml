@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo-Next 优化记录（持续更新中...）</title>
-    <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>仅对<a
-href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
-<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
-<p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
-<p>注意：</p>
-<ul>
-<li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>，<strong>路径不能出现中文！</strong></li>
-<li>右键即可保存 pdf。</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>第一篇博客</title>
     <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
@@ -70,6 +55,21 @@ href="https://hexo.io/docs/generating.html">Generating</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a
 href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo-Next 优化记录（持续更新中...）</title>
+    <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>仅对<a
+href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
+<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
+<p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
+<p>注意：</p>
+<ul>
+<li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>，<strong>路径不能出现中文！</strong></li>
+<li>右键即可保存 pdf。</li>
+</ul>
 ]]></content>
   </entry>
 </search>
