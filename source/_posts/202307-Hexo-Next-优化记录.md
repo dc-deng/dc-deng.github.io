@@ -6,6 +6,8 @@ tags:
 sticky: 1
 ---
 
+仅对[官方手册](https://theme-next.js.org/)中没有的，或出错的作一些补充。
+
 ## 添加 pdf-230717
 
 这里将会是一个 pdf：{% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %}
