@@ -3,9 +3,10 @@ title: Hexo-Next 优化记录（持续更新中...）
 description: rt
 categories:
 tags:
+sticky: 1
 ---
 
-## 添加 pdf
+## 添加 pdf-230717
 
 这里将会是一个 pdf：{% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %}
 
