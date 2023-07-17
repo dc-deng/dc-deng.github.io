@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo-Next 优化记录（持续更新中...）</title>
+    <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
+<p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
+<p>注意：</p>
+<ul>
+<li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>，<strong>路径不能出现中文！</strong></li>
+<li>右键即可保存 pdf。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
+= =! 比原计划（13 号前搞定）已经迟了好久了。明天安心写，希望至少在 18
+号前完成，之后再来捣鼓这玩意。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+        <category>二零二三</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/07/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="显示公式测试">显示公式测试</h2>
+<ul>
+<li>行内公式：$ a=1 $。</li>
+</ul>
+<p><span class="math display">\[b=1\]</span></p>
+<ul>
+<li>行间公式： <span class="math display">\[
+\begin{equation}
+    \begin{split}
+        E_\theta &amp;= 2\sqrt{2}E_0r\frac{w_0}{w(x)^2}\exp\left[
+-\frac{r^2}{w(x)^2} \right]\\
+        &amp;\times f(t)\exp\left\{ i\left[ kx - \omega t - 2\phi(x) +
+\frac{kr^2}{2R(x)} \right] \right\}.
+    \end{split}
+\end{equation}
+\]</span></li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
