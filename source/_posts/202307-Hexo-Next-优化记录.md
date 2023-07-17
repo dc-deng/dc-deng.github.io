@@ -1,6 +1,6 @@
 ---
 title: Hexo-Next 优化记录（持续更新中...）
-description: rt
+description: 科研不搞，文章不写，还搁这持续优化呢？？？
 categories:
 tags:
 sticky: 1
