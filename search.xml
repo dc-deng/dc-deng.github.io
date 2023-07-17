@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一篇博客</title>
-    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
-= =! 比原计划（13 号前搞定）已经迟了好久了。明天安心写，希望至少在 18
-号前完成，之后再来捣鼓这玩意。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-        <category>二零二三</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hexo-Next 优化记录（持续更新中...）</title>
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>仅对<a
@@ -26,6 +14,18 @@ href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作
 <li>右键即可保存 pdf。</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
+= =! 比原计划（13 号前搞定）已经迟了好久了。明天安心写，希望至少在 18
+号前完成，之后再来捣鼓这玩意。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+        <category>二零二三</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
