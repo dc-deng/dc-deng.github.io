@@ -30,6 +30,12 @@ href="../2023/07/17/Hexo-Next-优化记录">路径</a>，链接是：<code>2023/
     <url>/2023/07/18/WelcomePage/</url>
     <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
 href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+<p>比如，引用<a
+href="2023/07/17/Hexo-Next-优化记录">这篇</a>，用了<code>/</code>的<a
+href="/2023/07/17/Hexo-Next-优化记录">路径</a>，<a
+href="https://dc-deng.github.io/2023/07/17/Hexo-Next-优化记录">绝对路径</a>，用了<code>~/</code>的<a
+href="~/2023/07/17/Hexo-Next-优化记录">路径</a>，用了<code>../</code>的<a
+href="../2023/07/17/Hexo-Next-优化记录">路径</a>，链接是：<code>2023/07/17/Hexo-Next-优化记录</code>。</p>
 ]]></content>
   </entry>
   <entry>
