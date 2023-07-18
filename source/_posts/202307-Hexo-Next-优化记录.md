@@ -3,10 +3,14 @@ title: Hexo-Next 优化记录（持续更新中...）
 description: 科研不搞，文章不写，还搁这持续优化呢？？？
 categories:
 tags:
-sticky: 1
+sticky: 0
 ---
 
 仅对[官方手册](https://theme-next.js.org/)中没有的，或出错的作一些补充。
+
+## 对站点内部 page 的链接引用-230718
+
+可以在[github 仓库](https://github.com/dc-deng/dc-deng.github.io/tree/main)里直接点开路径，复制。只需要到文件夹名就行，不用到`index.html`。比如，引用[这篇](2023/07/17/Hexo-Next-优化记录)，链接是：`2023/07/17/Hexo-Next-优化记录`。
 
 ## 添加 pdf-230717
 
