@@ -18,7 +18,9 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
 <ul>
 <li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>，<strong>路径不能出现中文！</strong></li>
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
+            <p>路径不能出现中文！！！</p>
+          </div></li>
 <li>右键即可保存 pdf。</li>
 </ul>
 ]]></content>
