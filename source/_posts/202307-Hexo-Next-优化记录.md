@@ -10,13 +10,15 @@ sticky: 0
 
 ## 对站点内部 page 的链接引用-230718
 
-可以在[github 仓库](https://github.com/dc-deng/dc-deng.github.io/tree/main)里直接点开路径，复制。只需要到文件夹名就行，不用到`index.html`。比如，引用[这篇](2023/07/17/Hexo-Next-优化记录)，链接是：`2023/07/17/Hexo-Next-优化记录`。
+可以在[github 仓库](https://github.com/dc-deng/dc-deng.github.io/tree/main)里直接点开路径，复制。只需要到文件夹名就行，不用到`index.html`。比如，引用[这篇](/2023/07/17/Hexo-Next-优化记录)，链接是：`/2023/07/17/Hexo-Next-优化记录`。
+
+{% note warning %}
+路径前一定得以`/`开头，表示从根目录`https://github.com/dc-deng`开始。`../`表示从上级目录开始，`~/`是无效的，开头什么都不加，则表示从当前目录开始。
+{% endnote %}
 
 ## 添加 pdf-230717
 
 这里将会是一个 pdf：{% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %}
-
-注意：
 
 - `latex-notes`文件夹放在`/source`里，加了个`index.md`，相当于是一个“隐藏的页面”。
 - 插入格式类似于：`{% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %}`，**路径不能出现中文！**
