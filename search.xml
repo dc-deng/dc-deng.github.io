@@ -5,12 +5,22 @@
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>仅对<a
 href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
+<h2 id="对站点内部-page-的链接引用-230718">对站点内部 page
+的链接引用-230718</h2>
+<p>可以在<a
+href="https://github.com/dc-deng/dc-deng.github.io/tree/main">github
+仓库</a>里直接点开路径，复制。只需要到文件夹名就行，不用到<code>index.html</code>。比如，引用<a
+href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/07/17/Hexo-Next-优化记录</code>。</p>
+<div class="note warning">
+            <p>路径前一定得以<code>/</code>开头，表示从根目录<code>https://github.com/dc-deng</code>开始。<code>../</code>表示从上级目录开始，<code>~/</code>是无效的，开头什么都不加，则表示从当前目录开始。</p>
+          </div>
 <h2 id="添加-pdf-230717">添加 pdf-230717</h2>
 <p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
-<p>注意：</p>
 <ul>
 <li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>，<strong>路径不能出现中文！</strong></li>
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
+            <p>路径不能出现中文！！！</p>
+          </div></li>
 <li>右键即可保存 pdf。</li>
 </ul>
 ]]></content>
@@ -30,8 +40,8 @@ href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作
   <entry>
     <title>欢迎！</title>
     <url>/2023/07/18/WelcomePage/</url>
-    <content><![CDATA[<p>本博客暂时仅为私人整理用。内容上，<strong>不</strong>记录任何琐碎、枯燥的细节，我也没精力把看到的想到的每一个
-note 都记录下来。</p>
+    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
+href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 ]]></content>
   </entry>
   <entry>
