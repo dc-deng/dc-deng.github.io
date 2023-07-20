@@ -10,11 +10,17 @@ sticky: 0
 
 ## 使用 wps 网盘进行 pdf 文件分享-230720
 
-因为发现 github 的仓库容量有[大小限制](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows)，所以 pdf 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的 wps 会员，所以会使用 wps 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）进行文件分享。
+因为发现 github 的仓库容量有[大小限制](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows)，所以 pdf 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的 wps 会员，所以会使用 wps 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）来分享文件。
 
-[测试](https://kdocs.cn/l/cgRgDDUkVbqd)
+链接[测试](https://kdocs.cn/l/cgRgDDUkVbqd)
 
-还是比较方便。
+pdf 插入测试：
+
+{% pdf https://kdocs.cn/l/cgRgDDUkVbqd %}
+
+只要把`{% pdf <url> %}`中的`<url>`换成网盘链接即可。
+
+> 唔。。。是直接插入了金山文档的 UI，看起来似乎效果更好了。
 
 ## 对站点内部 page 的链接引用-230718
 
