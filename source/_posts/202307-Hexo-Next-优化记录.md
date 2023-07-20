@@ -8,6 +8,14 @@ sticky: 0
 
 仅对[官方手册](https://theme-next.js.org/)中没有的，或出错的作一些补充。
 
+## 使用 wps 网盘进行 pdf 文件分享-230720
+
+因为发现 github 的仓库容量有大小限制，所以 pdf 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的 wps 会员，所以会使用 wps 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）进行文件分享。
+
+[测试](https://kdocs.cn/l/cgRgDDUkVbqd)
+
+还是比较方便。
+
 ## 对站点内部 page 的链接引用-230718
 
 可以在[github 仓库](https://github.com/dc-deng/dc-deng.github.io/tree/main)里直接点开路径，复制。只需要到文件夹名就行，不用到`index.html`。比如，引用[这篇](/2023/07/17/Hexo-Next-优化记录)，链接是：`/2023/07/17/Hexo-Next-优化记录`。
