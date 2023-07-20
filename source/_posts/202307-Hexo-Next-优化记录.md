@@ -10,7 +10,7 @@ sticky: 0
 
 ## 使用 wps 网盘进行 pdf 文件分享-230720
 
-因为发现 github 的仓库容量有大小限制，所以 pdf 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的 wps 会员，所以会使用 wps 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）进行文件分享。
+因为发现 github 的仓库容量有[大小限制](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows)，所以 pdf 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的 wps 会员，所以会使用 wps 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）进行文件分享。
 
 [测试](https://kdocs.cn/l/cgRgDDUkVbqd)
 
