@@ -7,7 +7,9 @@
 href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
 <h2 id="使用-wps-网盘进行-pdf-文件分享-230720">使用 wps 网盘进行 pdf
 文件分享-230720</h2>
-<p>因为发现 github 的仓库容量有大小限制，所以 pdf
+<p>因为发现 github 的仓库容量有<a
+href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows">大小限制</a>，所以
+pdf
 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的
 wps 会员，所以会使用 wps
 网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）进行文件分享。</p>
@@ -32,6 +34,25 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <li>右键即可保存 pdf。</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>欢迎！</title>
+    <url>/2023/07/18/WelcomePage/</url>
+    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
+href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
+= =! 比原计划（13 号前搞定）已经迟了好久了。明天安心写，希望至少在 18
+号前完成，之后再来捣鼓这玩意。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+        <category>二零二三</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -76,25 +97,6 @@ href="https://hexo.io/docs/generating.html">Generating</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a
 href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>第一篇博客</title>
-    <url>/2023/07/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>耗时两天，终于把博客初步搭好了，不过代价就是，整整两天，文章进度几乎为零
-= =! 比原计划（13 号前搞定）已经迟了好久了。明天安心写，希望至少在 18
-号前完成，之后再来捣鼓这玩意。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-        <category>二零二三</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>欢迎！</title>
-    <url>/2023/07/18/WelcomePage/</url>
-    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
-href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 ]]></content>
   </entry>
 </search>
