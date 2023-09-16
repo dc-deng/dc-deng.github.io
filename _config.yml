@@ -4,8 +4,13 @@
 
 # Site
 title: Homepage
+<<<<<<< HEAD
 subtitle: 好记性不如烂笔头
 description: 遵循本能的好奇心去探索
+=======
+subtitle:
+description: 闭嘴，做
+>>>>>>> 643ab88d749aefe989a7c3f7ea6dff87e0447a0f
 keywords:
 author: dcdeng
 language:
