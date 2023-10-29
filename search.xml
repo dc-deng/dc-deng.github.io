@@ -11,14 +11,13 @@ href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作
 href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows">大小限制</a>，所以
 pdf
 文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的
-wps 会员，所以会使用 wps
-网盘（应该也算是比较便宜的吧？不太了解，以后到期可能会换其它网盘）来分享文件。</p>
+wps 会员，所以会使用 wps 网盘来分享文件。</p>
 <p>链接<a href="https://kdocs.cn/l/cgRgDDUkVbqd">测试</a></p>
 <p>pdf 插入测试：</p>
 <div class="pdfobject-container" data-target="https://kdocs.cn/l/cgRgDDUkVbqd" data-height="1200px"></div>
 <p>只要把<code>&#123;% pdf <url> %&#125;</code>中的<code>&lt;url&gt;</code>换成网盘链接即可。</p>
 <blockquote>
-<p>唔。。。是直接插入了金山文档的 UI，看起来似乎效果更好了。</p>
+<p>是直接插入了金山文档的 UI，看起来效果更优。</p>
 </blockquote>
 <h2 id="对站点内部-page-的链接引用-230718">对站点内部 page
 的链接引用-230718</h2>
@@ -46,5 +45,25 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
     <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
 href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>CS106B，启动！</title>
+    <url>/2023/10/30/CS106B-Intro/</url>
+    <content><![CDATA[<p>课程视频：<a
+href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2020 夏</a>，<a
+href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2018 冬</a>。 辅助资料：<a
+href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
+href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
+<p>打算在博客记录下自己的学习
+C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
+主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
+CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
+Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
+]]></content>
+      <categories>
+        <category>CS106B</category>
+      </categories>
   </entry>
 </search>
