@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/07/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="显示公式测试">显示公式测试</h2>
-<ul>
-<li>行内公式：$ a=1 $。</li>
-</ul>
-<p><span class="math display">\[b=1\]</span></p>
-<ul>
-<li>行间公式： <span class="math display">\[
-\begin{equation}
-    \begin{split}
-        E_\theta &amp;= 2\sqrt{2}E_0r\frac{w_0}{w(x)^2}\exp\left[
--\frac{r^2}{w(x)^2} \right]\\
-        &amp;\times f(t)\exp\left\{ i\left[ kx - \omega t - 2\phi(x) +
-\frac{kr^2}{2R(x)} \right] \right\}.
-    \end{split}
-\end{equation}
-\]</span></li>
-</ul>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>欢迎！</title>
-    <url>/2023/07/18/WelcomePage/</url>
-    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
-href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo-Next 优化记录（持续更新中...）</title>
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>仅对<a
@@ -90,5 +38,48 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <li>右键即可保存 pdf。</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>CS106B，启动！</title>
+    <url>/2023/10/30/CS106B-Intro/</url>
+    <content><![CDATA[<p>课程视频：<a
+href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2020 夏</a>，<a
+href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2018 冬</a>。</p>
+<p>辅助资料：<a
+href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
+href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
+<hr />
+<p>打算在博客记录下自己的学习
+C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
+主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
+CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
+Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
+]]></content>
+      <categories>
+        <category>CS106B</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>欢迎！</title>
+    <url>/2023/07/18/WelcomePage/</url>
+    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
+href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>复习中期考核时整理的笔记</title>
+    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a
+href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
+<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
+<p><a
+href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
+<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
+]]></content>
+      <categories>
+        <category>物理笔记</category>
+      </categories>
   </entry>
 </search>
