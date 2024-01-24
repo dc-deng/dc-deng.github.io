@@ -118,5 +118,5 @@ symbols_count_time:
 
 deploy:
   type: git
-  repository: git@github.com:dc-deng/dc-deng.github.io.git #你的仓库地址
+  repository: git@ssh.github.com:dc-deng/dc-deng.github.io.git #你的仓库地址。用ssh.github.com似乎更优，详见：https://blog.csdn.net/qq_38330148/article/details/109371362
   branch: main
