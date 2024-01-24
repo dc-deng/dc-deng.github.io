@@ -1,86 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo-Next 优化记录（持续更新中...）</title>
-    <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>仅对<a
-href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
-<h2 id="使用-wps-网盘进行-pdf-文件分享-230720">使用 wps 网盘进行 pdf
-文件分享-230720</h2>
-<p>因为发现 github 的仓库容量有<a
-href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows">大小限制</a>，所以
-pdf
-文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的
-wps 会员，所以会使用 wps 网盘来分享文件。</p>
-<p>链接<a href="https://kdocs.cn/l/cgRgDDUkVbqd">测试</a></p>
-<p>pdf 插入测试：</p>
-<div class="pdfobject-container" data-target="https://kdocs.cn/l/cgRgDDUkVbqd" data-height="1200px"></div>
-<p>只要把<code>&#123;% pdf <url> %&#125;</code>中的<code>&lt;url&gt;</code>换成网盘链接即可。</p>
-<blockquote>
-<p>是直接插入了金山文档的 UI，看起来效果更优。</p>
-</blockquote>
-<h2 id="对站点内部-page-的链接引用-230718">对站点内部 page
-的链接引用-230718</h2>
-<p>可以在<a
-href="https://github.com/dc-deng/dc-deng.github.io/tree/main">github
-仓库</a>里直接点开路径，复制。只需要到文件夹名就行，不用到<code>index.html</code>。比如，引用<a
-href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/07/17/Hexo-Next-优化记录</code>。</p>
-<div class="note warning">
-            <p>路径前一定得以<code>/</code>开头，表示从根目录<code>https://github.com/dc-deng</code>开始。<code>../</code>表示从上级目录开始，<code>~/</code>是无效的，开头什么都不加，则表示从当前目录开始。</p>
-          </div>
-<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
-<p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
-<ul>
-<li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
-            <p>路径不能出现中文！！！</p>
-          </div></li>
-<li>右键即可保存 pdf。</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>欢迎！</title>
     <url>/2023/07/18/WelcomePage/</url>
     <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
 href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>CS106B，启动！</title>
-    <url>/2023/10/30/CS106B-Intro/</url>
-    <content><![CDATA[<p>课程视频：<a
-href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
-站-CS106B-2020 夏</a>，<a
-href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
-站-CS106B-2018 冬</a>。</p>
-<p>辅助资料：<a
-href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
-href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
-<hr />
-<p>打算在博客记录下自己的学习
-C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
-主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
-CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
-Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
-]]></content>
-      <categories>
-        <category>CS106B</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复习中期考核时整理的笔记</title>
-    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><a
-href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
-<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
-<p><a
-href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
-<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
-]]></content>
-      <categories>
-        <category>物理笔记</category>
-      </categories>
   </entry>
   <entry>
     <title>plotly 作图库笔记</title>
@@ -374,6 +299,81 @@ syntax）更新。</p>
 ]]></content>
       <categories>
         <category>python 笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo-Next 优化记录（持续更新中...）</title>
+    <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>仅对<a
+href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
+<h2 id="使用-wps-网盘进行-pdf-文件分享-230720">使用 wps 网盘进行 pdf
+文件分享-230720</h2>
+<p>因为发现 github 的仓库容量有<a
+href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows">大小限制</a>，所以
+pdf
+文档（教材之类）应该都不会放在博客一起了，另外存在其它网盘。而之前充了好几年的
+wps 会员，所以会使用 wps 网盘来分享文件。</p>
+<p>链接<a href="https://kdocs.cn/l/cgRgDDUkVbqd">测试</a></p>
+<p>pdf 插入测试：</p>
+<div class="pdfobject-container" data-target="https://kdocs.cn/l/cgRgDDUkVbqd" data-height="1200px"></div>
+<p>只要把<code>&#123;% pdf <url> %&#125;</code>中的<code>&lt;url&gt;</code>换成网盘链接即可。</p>
+<blockquote>
+<p>是直接插入了金山文档的 UI，看起来效果更优。</p>
+</blockquote>
+<h2 id="对站点内部-page-的链接引用-230718">对站点内部 page
+的链接引用-230718</h2>
+<p>可以在<a
+href="https://github.com/dc-deng/dc-deng.github.io/tree/main">github
+仓库</a>里直接点开路径，复制。只需要到文件夹名就行，不用到<code>index.html</code>。比如，引用<a
+href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/07/17/Hexo-Next-优化记录</code>。</p>
+<div class="note warning">
+            <p>路径前一定得以<code>/</code>开头，表示从根目录<code>https://github.com/dc-deng</code>开始。<code>../</code>表示从上级目录开始，<code>~/</code>是无效的，开头什么都不加，则表示从当前目录开始。</p>
+          </div>
+<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
+<p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
+<ul>
+<li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
+            <p>路径不能出现中文！！！</p>
+          </div></li>
+<li>右键即可保存 pdf。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>复习中期考核时整理的笔记</title>
+    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a
+href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
+<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
+<p><a
+href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
+<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
+]]></content>
+      <categories>
+        <category>物理笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CS106B，启动！</title>
+    <url>/2023/10/30/CS106B-Intro/</url>
+    <content><![CDATA[<p>课程视频：<a
+href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2020 夏</a>，<a
+href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2018 冬</a>。</p>
+<p>辅助资料：<a
+href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
+href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
+<hr />
+<p>打算在博客记录下自己的学习
+C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
+主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
+CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
+Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
+]]></content>
+      <categories>
+        <category>CS106B</category>
       </categories>
   </entry>
 </search>
