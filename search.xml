@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>欢迎！</title>
+    <url>/2023/07/18/WelcomePage/</url>
+    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
+href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo-Next 优化记录（持续更新中...）</title>
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>仅对<a
@@ -40,11 +47,18 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 ]]></content>
   </entry>
   <entry>
-    <title>欢迎！</title>
-    <url>/2023/07/18/WelcomePage/</url>
-    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
-href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+    <title>复习中期考核时整理的笔记</title>
+    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a
+href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
+<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
+<p><a
+href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
+<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
 ]]></content>
+      <categories>
+        <category>物理笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>CS106B，启动！</title>
@@ -66,20 +80,6 @@ Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷
 ]]></content>
       <categories>
         <category>CS106B</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复习中期考核时整理的笔记</title>
-    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><a
-href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
-<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
-<p><a
-href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
-<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
-]]></content>
-      <categories>
-        <category>物理笔记</category>
       </categories>
   </entry>
   <entry>
