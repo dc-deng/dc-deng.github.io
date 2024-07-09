@@ -413,7 +413,8 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: false
-    family: Source Han Sans CN VF
+    # family: Source Han Sans CN VF
+    family: LXGW WenKai
     size: 1
 
   # Font settings for site title (.site-title).
