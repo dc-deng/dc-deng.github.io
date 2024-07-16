@@ -416,33 +416,38 @@ font:
     # family: Source Han Serif CN
     # family: Source Han Sans CN VF
     family: LXGW WenKai
-    size: 1
+    # family: MiSans
+    size: 0.95
 
   # Font settings for site title (.site-title).
   title:
     external: false
     # family: Source Han Sans CN VF
     # family: Source Han Sans CN VF
-    size: 1
+    # family: MiSans
+    # size: 1
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: false
     # family: Source Han Sans CN VF
     # family: Source Han Sans CN VF
-    size:
+    # family: MiSans
+    # size:
 
   # Font settings for posts (.post-body).
   posts:
     external: false
     # family: Source Han Serif CN
     # family: Source Han Serif CN
-    size: 1
+    # family: MiSans
+    # size: 0.1
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
     family:
+    # size: 0.85
 
 # ---------------------------------------------------------------
 # SEO Settings
