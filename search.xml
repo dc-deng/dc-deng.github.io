@@ -53,9 +53,11 @@ href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
 站-CS106B-2020 夏</a>，<a
 href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
-站-CS106B-2018 冬</a>。 辅助资料：<a
+站-CS106B-2018 冬</a>。</p>
+<p>辅助资料：<a
 href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
 href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
+<hr />
 <p>打算在博客记录下自己的学习
 C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
 主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
@@ -64,6 +66,300 @@ Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷
 ]]></content>
       <categories>
         <category>CS106B</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>plotly 作图库笔记</title>
+    <url>/2024/07/16/plotly/</url>
+    <content><![CDATA[<h1 id="面向对象编程拾缺">面向对象编程（拾缺）</h1>
+<blockquote>
+<p>这一部分是关于《Python 从入门到精通》书中第 10
+章的笔记。当时看的一知半解，一直都是调包狂魔，没这方面需求。这次大致都搞明白了。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="面向对象概述">面向对象概述</h2>
+<h3 id="对象">对象</h3>
+<ul>
+<li>静态部分：“属性”；动态部分：“行为”。</li>
+</ul>
+<h3 id="类">类</h3>
+<ul>
+<li>类是封装对象的属性和行为的<strong>载体</strong>，对象是类的<strong>实例</strong>。类定义了该类中所有对象所共有的属性和行为。</li>
+</ul>
+<h3 id="面向对象程序设计的特点">面向对象程序设计的特点</h3>
+<ol type="1">
+<li>封装：比如类就只提供了对象的属性和行为的接口，避免了外部对内部数据的影响。</li>
+<li>继承：在类下再定义类，子类继承了父类封装的属性和行为，又有了自己定义的属性和行为。子类的实例都是父类的实例，但不能反过来说。</li>
+<li>多态：子类是在满足父类的属性和行为之上又定义了<strong>新</strong>的属性和行为，相当于给父类的实例加了新的限制。父类无法区分这些限制，只能通过加子类来区分。通过这种<strong>区分</strong>行为，就有了多种形态。实际上还是在父类实例集合中。</li>
+</ol>
+<h2 id="类的定义和使用">类的定义和使用</h2>
+<h3 id="定义类">定义类</h3>
+<ul>
+<li><code>class</code> 关键字。 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClassName</span>:</span><br><span class="line">  <span class="string">&#x27;&#x27;&#x27;类的帮助信息&#x27;&#x27;&#x27;</span></span><br><span class="line">  statement</span><br></pre></td></tr></table></figure></li>
+<li>通过类新建属于该类的实例： <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a = ClassName(parameterlist)</span><br></pre></td></tr></table></figure> <code>parameterlist</code>
+是传给 <code>__init__()</code> 方法的参数。</li>
+<li><code>statement</code>
+里就可以定义该类中所有实例的属性和行为，后者称为方法。必须要有个初始化方法
+<code>__init__</code>，每次创建新的实例时都会自动先执行一遍初始化方法。方法的定义和函数定义代码类似：
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, parameterlist</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>其中 <code>self</code>
+是所有实例方法都必需的参数，且必须放在第一个，用以指定实例自身，于是可通过
+<code>self</code> 调用类中其它的属性和方法。</li>
+<li>其它实例方法可类似定义，不过是不会创建时自动执行。实例方法是对实例的函数，每次在外调用都直接作用在实例本身。调用方法：
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">instanceName.functionName(parametervalue)</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>属性分为类属性和实例属性。
+<ul>
+<li>类属性在类中、方法外定义，所有类的实例共用。方法可以改变类属性。书中一个例子是，每次初始化对类属性
+<code>number</code> 加
+1，用以计算新建实例的数量。类属性可通过类名称或实例名访问，并可通过调用的方式动态添加新的类属性。</li>
+<li>实例属性可通过 <code>self</code>
+关键字定义/修改。在类外代码中，只能通过每个特定实例修改各自的实例属性，且互不影响。</li>
+</ul></li>
+</ul>
+<h2 id="属性">属性</h2>
+<ul>
+<li><p>在方法上加
+<code>@property</code>，将该方法转为属性，调用时按属性的调用形式调用，不用小括号。调用时自动执行该方法的函数，并返回执行后的结果（方法定义里要有
+<code>return</code>）。</p>
+<blockquote>
+<p>方法之所以要加 <code>()</code>，是因为它是可以输入参数的。</p>
+</blockquote></li>
+<li><p>剩下的懒得记了，感觉看到这，看书应该理解上没啥问题了。</p></li>
+</ul>
+<h1 id="creating-and-updating-figures-in-python">Creating and Updating
+Figures in Python</h1>
+<ul>
+<li>plotly 的 python
+包主要通过数据结构（<strong>figures</strong>）来实现创建、操作和渲染等细节。figures
+是 <code>plotly.graph_objects.Figure</code> 类的字典或实例。</li>
+</ul>
+<h2 id="figures-as-dictionaries">Figures As Dictionaries</h2>
+<ul>
+<li><p>较低层级上，figures 可以通过字典表示，并通过
+<code>plotly.io.show()</code> 函数显示。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">fig = <span class="built_in">dict</span>(&#123;</span><br><span class="line">  <span class="string">&quot;data&quot;</span>: [&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">            <span class="string">&quot;x&quot;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">            <span class="string">&quot;y&quot;</span>: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]&#125;],</span><br><span class="line">  <span class="string">&quot;layout&quot;</span>: &#123;<span class="string">&quot;title&quot;</span>: &#123;<span class="string">&quot;text&quot;</span>: <span class="string">&quot;A Figure Specified By Python Dictionary&quot;</span>&#125;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># To display the figure defined by this dict, use the low-level plotly.io.show function</span></span><br><span class="line"><span class="keyword">import</span> plotly.io <span class="keyword">as</span> pio</span><br><span class="line"></span><br><span class="line">pio.show(fig)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="figures-as-graph-objects">Figures as Graph Objects</h2>
+<ul>
+<li><p><code>plotly.graph_objects</code>
+模块提供一个自动生成的派生类（子类）
+<code>graph_objects</code>，可以在高层级上通过
+<code>plotly.graph_objects.Figure</code> 类表示 figures。
+<div class="note ">
+            <p>推荐使用 Plotly Express 来一次性生成整个 figures的字典，并按照本章所描述的方法操作<code>plotly.graph_objects.Figure</code> 对象，而不是用<code>graph_objects</code> 自底向上整合 figures。</p>
+          </div></p></li>
+<li><p>例子 1：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(</span><br><span class="line">    data=[go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>])],</span><br><span class="line">    layout=go.Layout(</span><br><span class="line">        title=go.layout.Title(text=<span class="string">&quot;A Figure Specified By A Graph Object&quot;</span>)</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+<li><p>例子 2，graph object 也可由字典（作为 figure
+的一种低层级表示方法）创建 figure：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">dict_of_fig = <span class="built_in">dict</span>(&#123;</span><br><span class="line">    <span class="string">&quot;data&quot;</span>: [&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;bar&quot;</span>,</span><br><span class="line">              <span class="string">&quot;x&quot;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">              <span class="string">&quot;y&quot;</span>: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]&#125;],</span><br><span class="line">    <span class="string">&quot;layout&quot;</span>: &#123;<span class="string">&quot;title&quot;</span>: &#123;<span class="string">&quot;text&quot;</span>: <span class="string">&quot;A Figure Specified By A Graph Object With A Dictionary&quot;</span>&#125;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fig = go.Figure(dict_of_fig)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+<li><p>例子 3，从 graph object 输出字典和 JSON 格式：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(</span><br><span class="line">    data=[go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>])],</span><br><span class="line">    layout=go.Layout(height=<span class="number">600</span>, width=<span class="number">800</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">fig.layout.template = <span class="literal">None</span> <span class="comment"># to slim down the output</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Dictionary Representation of A Graph Object:\n\n&quot;</span> + <span class="built_in">str</span>(fig.to_dict()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;JSON Representation of A Graph Object:\n\n&quot;</span> + <span class="built_in">str</span>(fig.to_json()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n\n&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="when-to-use-graph-objects">When to use Graph Objects</h3>
+<ul>
+<li>两者（字典和 graph
+objects）的优缺点对比可见：https://plotly.com/python/graph-objects/。</li>
+<li><code>plotly.graph_objects</code> 模块有一组派生类，代表着 figure
+schema 中非叶节点（non-leaf node）。graph objects
+指这些派生类的实例。这些实例有很方便的方法来改变其属性（应该是实例属性吧？）。
+<div class="note ">
+            <p>每个 figure 的非叶属性都是 <code>plotly.graph_objects</code>其中一个派生类中的一个实例，也即一个 graph object（猜）。</p>
+          </div></li>
+<li>上面例子中，data 的值是一个列表，列表里的对象被称为
+traces，它们有超过 40 余种可能的类型。每一个 trace
+都归属于<code>plotly.graph_objects</code>中的一个类。
+<ul>
+<li>例子：trace 的一个类型是 <code>scatter</code>，可由类
+<code>plotly.graph_objects.Scatter</code> 中的一个实例表示。这意味着由
+<code>go.Figure(data=[go.Scatter(x=[1,2], y=[3,4)])</code> 的 JSON
+表示将会是
+<code>&#123;"data": [&#123;"type": "scatter", "x": [1,2], "y": [3,4]&#125;]&#125;</code>，而这句话里的
+<code>go.Scatter(x=[1,2], y=[3,4)])</code> 是新建了一个
+<code>plotly.graph_objects.Scatter</code>
+中的实例。该实例便属于非叶节点，即不在 figure 树的属性中的节点。</li>
+</ul></li>
+<li>Plotly Express 里的函数能够在 graph objects 的基础上建立
+figures，即返回 <code>plotly.graph_objects.Figure</code> 类的实例。
+<div class="note ">
+            <h3 id="小结">小结</h3><p>至此我们有了两种表示 figure 的方法。一种是字典，一种是 graphobject。对后者而言，可以自底向上从单个 graph object 开始，通过<code>go.Figure()</code> 建立 figure，也可用 Plotly Express一次性创建。</p>
+          </div></li>
+</ul>
+<h2 id="creating-figures-or-subplots">Creating Figures or Subplots</h2>
+<div class="note ">
+            <p>此页面总结了几种创建新的 graph object 的方法。推荐用 Plotly Express创建。</p>
+          </div>
+<h3 id="plotly-express">Plotly Express</h3>
+<ul>
+<li><p>Plotly Express 是高层级数据可视化
+API，能够通过一次函数调用创建几乎全部（fully-populated）的 graph
+object。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.express <span class="keyword">as</span> px</span><br><span class="line"></span><br><span class="line">df = px.data.iris()</span><br><span class="line">fig = px.scatter(df, x=<span class="string">&quot;sepal_width&quot;</span>, y=<span class="string">&quot;sepal_length&quot;</span>, color=<span class="string">&quot;species&quot;</span>, title=<span class="string">&quot;A Plotly Express Figure&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you print the figure, you&#x27;ll see that it&#x27;s just a regular figure with data and layout</span></span><br><span class="line"><span class="comment"># print(fig)</span></span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="graph-objects-figure-constructor">Graph Objects Figure
+Constructor</h3>
+<ul>
+<li>前面已经说了，通过 <code>go.Figure()</code>，可从字典或 graph
+object&amp;layout 来创建 figure。</li>
+</ul>
+<h3 id="figure-factories">Figure Factories</h3>
+<ul>
+<li><p>Figure factories 提供了函数来创建
+figures，通常是为了满足特定需求。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> plotly.figure_factory <span class="keyword">as</span> ff</span><br><span class="line"></span><br><span class="line">x1,y1 = np.meshgrid(np.arange(<span class="number">0</span>, <span class="number">2</span>, <span class="number">.2</span>), np.arange(<span class="number">0</span>, <span class="number">2</span>, <span class="number">.2</span>))</span><br><span class="line">u1 = np.cos(x1)*y1</span><br><span class="line">v1 = np.sin(x1)*y1</span><br><span class="line"></span><br><span class="line">fig = ff.create_quiver(x1, y1, u1, v1)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="make-subplots">Make Subplots</h3>
+<ul>
+<li><p><code>plotly.subplots.make_subplots()</code>
+函数通过格点来排布子图，各子图的 trace 通过 <code>add_trace()</code>
+函数添加。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.subplots <span class="keyword">import</span> make_subplots</span><br><span class="line"></span><br><span class="line">fig = make_subplots(rows=<span class="number">1</span>, cols=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.add_trace(go.Scatter(y=[<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>], mode=<span class="string">&quot;lines&quot;</span>), row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line">fig.add_trace(go.Bar(y=[<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>]), row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+<li><p>下面加 trace 里还有用 Plotly Express
+建子图的，但我没看懂怎么建立的。</p></li>
+</ul>
+<h2 id="updating-figures">Updating Figures</h2>
+<ul>
+<li>不管一个 figure 怎么建立起来的，总可通过加额外的 traces
+或者修改其属性来进行更新。</li>
+</ul>
+<h3 id="adding-traces">Adding Traces</h3>
+<ul>
+<li><p><code>add_trace()</code> 方法可添加新的 traces，这样可一步步加
+<code>go.Bar</code> 和
+<code>go.Scatter</code>等等。<code>append_trace()</code>
+可做同样的事，但是不返回 figure。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure()</span><br><span class="line"></span><br><span class="line">fig.add_trace(go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]))</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此方法只要是 figre 对象即可，不管它是通过何种方式建立起来的。</li>
+</ul></li>
+</ul>
+<h3 id="adding-traces-to-subplots">Adding Traces To Subplots</h3>
+<ul>
+<li><p>若一个 figure 的子图是用
+<code>plotly.subplots.make_subplots()</code> 生成，则可通过指定
+<code>add_trace()</code> 中的 <code>row</code> 和 <code>col</code>
+参数来在特定子图添加新的 trace。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.subplots <span class="keyword">import</span> make_subplots</span><br><span class="line"></span><br><span class="line">fig = make_subplots(rows=<span class="number">1</span>, cols=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.add_trace(go.Scatter(y=[<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>], mode=<span class="string">&quot;lines&quot;</span>), row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line">fig.add_trace(go.Bar(y=[<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>]), row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+<li><p>这对通过 Plotly Express 用 <code>facet_row</code> 或
+<code>facet_col</code> 参数建立的子图也有效。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.express <span class="keyword">as</span> px</span><br><span class="line"></span><br><span class="line">df = px.data.iris()</span><br><span class="line"></span><br><span class="line">fig = px.scatter(df, x=<span class="string">&quot;sepal_width&quot;</span>, y=<span class="string">&quot;sepal_length&quot;</span>, color=<span class="string">&quot;species&quot;</span>, facet_col=<span class="string">&quot;species&quot;</span>,</span><br><span class="line">                title=<span class="string">&quot;Adding Traces To Subplots Witin A Plotly Express Figure&quot;</span>)</span><br><span class="line"></span><br><span class="line">reference_line = go.Scatter(x=[<span class="number">2</span>, <span class="number">4</span>],</span><br><span class="line">                            y=[<span class="number">4</span>, <span class="number">8</span>],</span><br><span class="line">                            mode=<span class="string">&quot;lines&quot;</span>,</span><br><span class="line">                            line=go.scatter.Line(color=<span class="string">&quot;gray&quot;</span>),</span><br><span class="line">                            showlegend=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">fig.add_trace(reference_line, row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line">fig.add_trace(reference_line, row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line">fig.add_trace(reference_line, row=<span class="number">1</span>, col=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+<p>但这子图我属实没看懂怎么建立的。</p></li>
+</ul>
+<h3 id="add-trace-convenience-methods">Add Trace Convenience
+Methods</h3>
+<ul>
+<li><p>在 <code>add_trace()</code> 方法中，都要先建立各类型的
+trace，再作为参数传给它。也可用 <code>add_&#123;type&#125;</code>方法，其中
+<code>&#123;type&#125;</code> 换成对应 trace 的类型，可将两步合为一步。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.subplots <span class="keyword">import</span> make_subplots</span><br><span class="line"></span><br><span class="line">fig = make_subplots(rows=<span class="number">1</span>, cols=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.add_scatter(y=[<span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>], mode=<span class="string">&quot;lines&quot;</span>, row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line">fig.add_bar(y=[<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>], row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="magic-underscore-notation">Magic Underscore Notation</h3>
+<ul>
+<li><p>为了能更好操控嵌套属性（nested properties），graph object
+constructors 和很多 graph object 方法都支持魔术下划线表示（magic
+underscore notation）。</p>
+<ul>
+<li>不用下划线：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(</span><br><span class="line">    data=[go.Scatter(y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>], line=<span class="built_in">dict</span>(color=<span class="string">&quot;crimson&quot;</span>))],</span><br><span class="line">    layout=<span class="built_in">dict</span>(title=<span class="built_in">dict</span>(text=<span class="string">&quot;A Graph Objects Figure Without Magic Underscore Notation&quot;</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用下划线：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(</span><br><span class="line">    data=[go.Scatter(y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>], line_color=<span class="string">&quot;crimson&quot;</span>)],</span><br><span class="line">    layout_title_text=<span class="string">&quot;A Graph Objects Figure With Magic Underscore Notation&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以看到嵌套相当于是字典的 key
+的嵌套，总而言之，它使关键字参数的输入更加方便。</li>
+</ul></li>
+<li><p>一般而言，关键字参数里出现下划线<strong>几乎总是</strong>用了下划线表示，但也有一些个例不是，比如：<code>error_x</code>,
+<code>error_y</code>, <code>error_z</code>, <code>copy_xstyle</code>,
+<code>copy_ystyle</code>, <code>copy_zstyle</code>,
+<code>paper_bgcolor</code>, and
+<code>plot_bgcolor</code>。这些都是在早期没有定义下划线表示时加入库中的。</p></li>
+</ul>
+<h3 id="updating-traces">Updating Traces</h3>
+<ul>
+<li><p><code>update_traces()</code> 方法，提供 <code>selector</code>
+参数来选择哪些 traces 被更改。selector 参数接收字典，字典里的 key 就是
+traces 里的关键字，value 就是想要筛选的值。除此之外，也有
+<code>col</code> 和 <code>row</code> 参数来直接指定子图的行列。此方法对
+Plotly Express 和 figure factories 建立的 figure 也有效。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.subplots <span class="keyword">import</span> make_subplots</span><br><span class="line"></span><br><span class="line">fig = make_subplots(rows=<span class="number">1</span>, cols=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.add_scatter(y=[<span class="number">4</span>, <span class="number">2</span>, <span class="number">3.5</span>], mode=<span class="string">&quot;markers&quot;</span>,</span><br><span class="line">                marker=<span class="built_in">dict</span>(size=<span class="number">20</span>, color=<span class="string">&quot;LightSeaGreen&quot;</span>),</span><br><span class="line">                name=<span class="string">&quot;a&quot;</span>, row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">fig.add_bar(y=[<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>],</span><br><span class="line">            marker=<span class="built_in">dict</span>(color=<span class="string">&quot;MediumPurple&quot;</span>),</span><br><span class="line">            name=<span class="string">&quot;b&quot;</span>, row=<span class="number">1</span>, col=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">fig.add_scatter(y=[<span class="number">2</span>, <span class="number">3.5</span>, <span class="number">4</span>], mode=<span class="string">&quot;markers&quot;</span>,</span><br><span class="line">                marker=<span class="built_in">dict</span>(size=<span class="number">20</span>, color=<span class="string">&quot;MediumPurple&quot;</span>),</span><br><span class="line">                name=<span class="string">&quot;c&quot;</span>, row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.add_bar(y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">            marker=<span class="built_in">dict</span>(color=<span class="string">&quot;LightSeaGreen&quot;</span>),</span><br><span class="line">            name=<span class="string">&quot;d&quot;</span>, row=<span class="number">1</span>, col=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">fig.update_traces(marker=<span class="built_in">dict</span>(color=<span class="string">&quot;RoyalBlue&quot;</span>)) <span class="comment"># 更改所有的traces中的marker参数</span></span><br><span class="line">fig.update_traces(marker=<span class="built_in">dict</span>(color=<span class="string">&quot;RoyalBlue&quot;</span>),</span><br><span class="line">                  selector=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&quot;bar&quot;</span>)) <span class="comment"># 更改满足selector的子图的marker参数。</span></span><br><span class="line">fig.update_traces(</span><br><span class="line">    line=<span class="built_in">dict</span>(dash=<span class="string">&quot;dot&quot;</span>, width=<span class="number">4</span>),</span><br><span class="line">    selector=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&quot;scatter&quot;</span>, mode=<span class="string">&quot;lines&quot;</span>)) <span class="comment"># 字典里多个key。</span></span><br><span class="line">fig.update_traces(marker_color=<span class="string">&quot;RoyalBlue&quot;</span>,</span><br><span class="line">        selector=<span class="built_in">dict</span>(marker_color=<span class="string">&quot;MediumPurple&quot;</span>)) <span class="comment"># 下划线表示</span></span><br><span class="line">fig.update_traces(marker=<span class="built_in">dict</span>(color=<span class="string">&quot;RoyalBlue&quot;</span>), col=<span class="number">2</span>) <span class="comment"># 行列筛选。</span></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="conditionally-updating-traces">Conditionally Updating
+Traces</h3>
+<ul>
+<li><p>根据各个 trace
+的某些属性的当前值作为条件（即条件不是人为给定的）来更新其它
+traces，可使用 <code>for_each_trace()</code>
+方法。其第一个参数需要是一个函数（比如一个匿名函数），来作为条件去更新那些
+traces。此方法也有 <code>selector</code> 参数来圈定要更改的 traces
+的范围。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> plotly.express <span class="keyword">as</span> px</span><br><span class="line"></span><br><span class="line">df = px.data.iris()</span><br><span class="line"></span><br><span class="line">fig = px.scatter(df, x=<span class="string">&quot;sepal_width&quot;</span>, y=<span class="string">&quot;sepal_length&quot;</span>, color=<span class="string">&quot;species&quot;</span>,</span><br><span class="line">                title=<span class="string">&quot;Conditionally Updating Traces In A Plotly Express Figure With for_each_trace()&quot;</span>)</span><br><span class="line"></span><br><span class="line">fig.for_each_trace(</span><br><span class="line">    <span class="keyword">lambda</span> trace: trace.update(marker_symbol=<span class="string">&quot;square&quot;</span>) <span class="keyword">if</span> trace.name == <span class="string">&quot;setosa&quot;</span> <span class="keyword">else</span> (),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="updating-figure-layouts">Updating Figure Layouts</h3>
+<ul>
+<li><p><code>update_layout()</code> 方法。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(data=go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]))</span><br><span class="line"></span><br><span class="line">fig.update_layout(title_text=<span class="string">&quot;Using update_layout() With Graph Object Figures&quot;</span>,</span><br><span class="line">                  title_font_size=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+<li><p>以下是几种等价的操作。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">fig.update_layout(title_text=<span class="string">&quot;update_layout() Syntax Example&quot;</span>,</span><br><span class="line">                title_font_size=<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">fig.update_layout(title_text=<span class="string">&quot;update_layout() Syntax Example&quot;</span>,</span><br><span class="line">                  title_font=<span class="built_in">dict</span>(size=<span class="number">30</span>))</span><br><span class="line"></span><br><span class="line">fig.update_layout(title=<span class="built_in">dict</span>(text=<span class="string">&quot;update_layout() Syntax Example&quot;</span>),</span><br><span class="line">                            font=<span class="built_in">dict</span>(size=<span class="number">30</span>))</span><br><span class="line"></span><br><span class="line">fig.update_layout(&#123;<span class="string">&quot;title&quot;</span>: &#123;<span class="string">&quot;text&quot;</span>: <span class="string">&quot;update_layout() Syntax Example&quot;</span>,</span><br><span class="line">                            <span class="string">&quot;font&quot;</span>: &#123;<span class="string">&quot;size&quot;</span>: <span class="number">30</span>&#125;&#125;&#125;)</span><br><span class="line"></span><br><span class="line">fig.update_layout(title=go.layout.Title(text=<span class="string">&quot;update_layout() Syntax Example&quot;</span>,</span><br><span class="line">                                        font=go.layout.title.Font(size=<span class="number">30</span>)))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3
+id="overwrite-existing-properties-when-using-update-methods">Overwrite
+Existing Properties When Using Update Methods</h3>
+<ul>
+<li><p><code>update_layout()</code> 和 <code>update_traces()</code>
+有一个 <code>overwrite</code> 关键字参数，默认是
+<code>False</code>，这样更新值会被精准地递归到嵌套的那一个 key。而若是
+<code>True</code>，则不会递归，而是整个地覆盖掉原来整条嵌套属性链的值。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">6</span>, <span class="number">4</span>, <span class="number">9</span>],</span><br><span class="line">                      marker_color=<span class="string">&quot;red&quot;</span>)) <span class="comment"># will be overwritten below</span></span><br><span class="line"></span><br><span class="line">fig.update_traces(overwrite=<span class="literal">True</span>, marker=&#123;<span class="string">&quot;opacity&quot;</span>: <span class="number">0.4</span>&#125;)</span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="updating-figure-axes">Updating Figure Axes</h3>
+<ul>
+<li><code>update_xaxes()</code>，<code>update_yaxes()</code>
+<ul>
+<li>例子：<code>fig.update_xaxes(showgrid=False)</code></li>
+</ul></li>
+<li>也有 <code>for_each_xaxis()</code> 和
+<code>for_each_yaxis()</code>，和上面的 <code>for_each_trace()</code>
+方法类似。</li>
+<li>对于非笛卡尔子图，有额外的 <code>update_&#123;type&#125;</code> 和
+<code>for_each_&#123;type&#125;</code> 方法。比如对极坐标，有
+<code>update_polar()</code> 和 <code>for_each_polar()</code></li>
+</ul>
+<h3 id="other-update-methods">Other Update Methods</h3>
+<ul>
+<li><code>update_layout_images()</code>：https://plotly.com/python/images/</li>
+<li><code>update_annotations()</code>：https://plotly.com/python/text-and-annotations/#multiple-annotations</li>
+<li><code>update_shapes()</code>：https://plotly.com/python/shapes/</li>
+</ul>
+<h3 id="chaining-figure-operations">Chaining Figure Operations</h3>
+<ul>
+<li>除了明显指出的地方，上面所有方法都会返回一个修改后的 figure
+的引用，利用这个机制可以在一个表达式里面链式修改 figure。 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">(px.scatter(df, x=<span class="string">&quot;sepal_width&quot;</span>, y=<span class="string">&quot;sepal_length&quot;</span>, color=<span class="string">&quot;species&quot;</span>,</span><br><span class="line">          facet_col=<span class="string">&quot;species&quot;</span>, trendline=<span class="string">&quot;ols&quot;</span>,</span><br><span class="line">          title=<span class="string">&quot;Chaining Multiple Figure Operations With A Plotly Express Figure&quot;</span>)</span><br><span class="line">.update_layout(title_font_size=<span class="number">24</span>)</span><br><span class="line">.update_xaxes(showgrid=<span class="literal">False</span>)</span><br><span class="line">.update_traces(</span><br><span class="line">    line=<span class="built_in">dict</span>(dash=<span class="string">&quot;dot&quot;</span>, width=<span class="number">4</span>),</span><br><span class="line">    selector=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&quot;scatter&quot;</span>, mode=<span class="string">&quot;lines&quot;</span>))</span><br><span class="line">).show()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个真的绝了。每次修改返回了 figure
+本身，再用点操作进行下次修改，最后整体作为 figure 直接
+<code>show()</code>。妙极。</li>
+</ul></li>
+</ul>
+<h3 id="property-assignment">Property Assignment</h3>
+<ul>
+<li><p>trace 和 layout 属性可以用属性赋值句法（property assignment
+syntax）更新。</p>
+<ul>
+<li><p>例子 1： <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line">fig = go.Figure(data=go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]))</span><br><span class="line">fig.layout.title.text = <span class="string">&quot;Using Property Assignment Syntax With A Graph Object Figure&quot;</span></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></p></li>
+<li><p>例子 2：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">fig = go.Figure(data=go.Bar(x=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], y=[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]))</span><br><span class="line"></span><br><span class="line">fig.data[<span class="number">0</span>].marker.line.width = <span class="number">4</span></span><br><span class="line">fig.data[<span class="number">0</span>].marker.line.color = <span class="string">&quot;black&quot;</span></span><br><span class="line"></span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<div class="note ">
+            <p>这显然是因为改的是 figure 树上的node。若是创建新的非叶节点则不能这样。</p>
+          </div>
+]]></content>
+      <categories>
+        <category>python 笔记</category>
       </categories>
   </entry>
   <entry>
