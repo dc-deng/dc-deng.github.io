@@ -5,8 +5,8 @@
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>仅对<a
 href="https://theme-next.js.org/">官方手册</a>中没有的，或出错的作一些补充。</p>
-<h2 id="使用-wps-网盘进行-pdf-文件分享-230720">使用 wps 网盘进行 pdf
-文件分享-230720</h2>
+<h1 id="使用-wps-网盘进行-pdf-文件分享-230720">使用 wps 网盘进行 pdf
+文件分享-230720</h1>
 <p>因为发现 github 的仓库容量有<a
 href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github?platform=windows">大小限制</a>，所以
 pdf
@@ -19,8 +19,8 @@ wps 会员，所以会使用 wps 网盘来分享文件。</p>
 <blockquote>
 <p>是直接插入了金山文档的 UI，看起来效果更优。</p>
 </blockquote>
-<h2 id="对站点内部-page-的链接引用-230718">对站点内部 page
-的链接引用-230718</h2>
+<h1 id="对站点内部-page-的链接引用-230718">对站点内部 page
+的链接引用-230718</h1>
 <p>可以在<a
 href="https://github.com/dc-deng/dc-deng.github.io/tree/main">github
 仓库</a>里直接点开路径，复制。只需要到文件夹名就行，不用到<code>index.html</code>。比如，引用<a
@@ -28,7 +28,7 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <div class="note warning">
             <p>路径前一定得以<code>/</code>开头，表示从根目录<code>https://github.com/dc-deng</code>开始。<code>../</code>表示从上级目录开始，<code>~/</code>是无效的，开头什么都不加，则表示从当前目录开始。</p>
           </div>
-<h2 id="添加-pdf-230717">添加 pdf-230717</h2>
+<h1 id="添加-pdf-230717">添加 pdf-230717</h1>
 <p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
 <ul>
 <li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
@@ -36,6 +36,38 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
             <p>路径不能出现中文！！！</p>
           </div></li>
 <li>右键即可保存 pdf。</li>
+</ul>
+<h1 id="数学公式测试">数学公式测试</h1>
+<ul>
+<li>行内公式：<span
+class="math inline">\(f(x)=\frac{a+1}{b\sqrt{x^2+y^2}}\cdot\cos(\omega t
++ kx)\exp{\left\{i(\omega t + kr)\frac{\omega}{k}\right\}}\)</span></li>
+<li>行间公式： <span class="math display">\[
+\begin{equation}
+  f(x)=\frac{a+1}{b\sqrt{x^2+y^2}}\cdot\cos(\omega t +
+kx)\exp{\left\{i(\omega t + kr)\frac{\omega}{k}\right\}}
+\end{equation}
+\]</span></li>
+</ul>
+<h1 id="修改了博客字体240717">修改了博客字体（240717）</h1>
+<ul>
+<li>中文字体为 <a href="https://github.com/lxgw/LxgwWenKai">LXGW
+WenKai/霞鹜文楷</a>，英文字体为 Windows 自带的 Cambria
+Math，可以同时支持英文和公式字体。两个都为衬线字体，但是粗细过渡都很平滑，看起来挺搭。我
+LaTeX 的公式字体也是 Cambria Math，这款字体看着确实挺舒服的。</li>
+</ul>
+<p>下面是一些设置字体里踩过的坑：</p>
+<ul>
+<li>按照 <a
+href="https://theme-next.js.org/docs/theme-settings/miscellaneous#Fonts-Customization">Next
+官方文档</a>说的，改字体只要在 _config.next.yml 文件里的 font
+一栏里改就行，但是我加上两套字体希望分别设置中英文字体却老是失败：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global:</span><br><span class="line">  external: false</span><br><span class="line">  # family: Source Han Serif CN # 思源宋体</span><br><span class="line">  # family: Source Han Sans CN VF # 思源黑体</span><br><span class="line">  family: Cambria Math, LXGW WenKai # 英文：Cambria Math，中文：霞鹜文楷</span><br><span class="line">  # family: MiSans</span><br><span class="line">  size: 0.95</span><br></pre></td></tr></table></figure> 最后只能在 ~-deng.github.io_variables 里的 base.styl
+文件里直接改字体： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Font families.</span><br><span class="line">$font-family-chinese      = &quot;Cambria Math&quot;, &quot;LXGW WenKai&quot;, &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure></li>
+<li>除了字体以外，还改了字体颜色（base.styl） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Global text color on &lt;body&gt;</span><br><span class="line">$text-color                   = $black-dim; // origin: black-light</span><br><span class="line">$text-color-dark              = $black-light; // origin: grey-light</span><br><span class="line">// Global link color.</span><br><span class="line">$link-color                   = $black-dim; // origin: black-light</span><br><span class="line">$link-color-dark              = $black-light; // origin: grey-light</span><br></pre></td></tr></table></figure>
+和字体大小（_config.next.yml，如上）。</li>
+<li>另外记录一下命令行中打印出英文字族名称的代码（from chatGPT）:
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Add-Type -AssemblyName System.Drawing</span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts = New-Object System.Drawing.Text.InstalledFontCollection</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts.Families | Where-Object &#123; <span class="variable">$_</span>.Name -notmatch <span class="string">&quot;[\u4e00-\u9fa5]&quot;</span> &#125; | ForEach-Object &#123;</span></span><br><span class="line">    [PSCustomObject]@&#123;</span><br><span class="line">        FontFamily = $_.Name</span><br><span class="line">    &#125;</span><br><span class="line">&#125; | Format-Table -AutoSize</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
   </entry>
@@ -66,6 +98,20 @@ Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷
 ]]></content>
       <categories>
         <category>CS106B</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>复习中期考核时整理的笔记</title>
+    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a
+href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
+<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
+<p><a
+href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
+<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
+]]></content>
+      <categories>
+        <category>物理笔记</category>
       </categories>
   </entry>
   <entry>
@@ -360,20 +406,6 @@ syntax）更新。</p>
 ]]></content>
       <categories>
         <category>python 笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复习中期考核时整理的笔记</title>
-    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><a
-href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
-<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
-<p><a
-href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
-<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
-]]></content>
-      <categories>
-        <category>物理笔记</category>
       </categories>
   </entry>
 </search>
