@@ -27,8 +27,8 @@ $orange       = #fc6423;
 // Settings for some of the most global styles.
 // --------------------------------------------------
 // Global text color on <body>
-$text-color                   = $black-light;
-$text-color-dark              = $grey-light;
+$text-color                   = $black-dim; // origin: black-light
+$text-color-dark              = $black-light; // origin: grey-light
 
 // Global link color.
 $link-color                   = $black-light;
@@ -69,10 +69,10 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
+$font-family-chinese      = "Cambria Math", "LXGW WenKai", "Microsoft YaHei";
 
-$font-family-base         = $font-family-chinese, sans-serif;
-$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global');
+$font-family-base         = $font-family-chinese, serif; // sans-serif
+$font-family-base         = get_font_family('global'), $font-family-chinese, serif if get_font_family('global');
 
 $font-family-logo         = $font-family-base;
 $font-family-logo         = get_font_family('title'), $font-family-base if get_font_family('title');

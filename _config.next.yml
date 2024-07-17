@@ -415,9 +415,9 @@ font:
     external: false
     # family: Source Han Serif CN
     # family: Source Han Sans CN VF
-    family: LXGW WenKai
+    family: Cambria Math, LXGW WenKai
     # family: MiSans
-    size: 0.95
+    size: 0.96
 
   # Font settings for site title (.site-title).
   title:
