@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>欢迎！</title>
-    <url>/2023/07/18/WelcomePage/</url>
-    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
-href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo-Next 优化记录（持续更新中...）</title>
     <url>/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="对站点内部-page-的链接引用-230718">对站点内部 page
@@ -101,6 +94,13 @@ xolor 包里的颜色，用 PPT 提取的，也分别是我 latex
       </tags>
   </entry>
   <entry>
+    <title>欢迎！</title>
+    <url>/2023/07/18/WelcomePage/</url>
+    <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
+href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>CS106B，启动！</title>
     <url>/2023/10/30/CS106B-Intro/</url>
     <content><![CDATA[<p>课程视频：<a
@@ -119,6 +119,8 @@ CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希�
 Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
 ]]></content>
       <categories>
+        <category>计算机</category>
+        <category>C++</category>
         <category>CS106B</category>
       </categories>
       <tags>
@@ -137,10 +139,9 @@ href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p
 <p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
 ]]></content>
       <categories>
-        <category>物理笔记</category>
+        <category>物理</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>物理</tag>
       </tags>
   </entry>
@@ -435,7 +436,8 @@ syntax）更新。</p>
           </div>
 ]]></content>
       <categories>
-        <category>python 笔记</category>
+        <category>计算机</category>
+        <category>python</category>
       </categories>
       <tags>
         <tag>python</tag>
