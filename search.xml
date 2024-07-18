@@ -16,7 +16,8 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
 <ul>
 <li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>
+<div class="note warning">
             <p>路径不能出现中文！！！</p>
           </div></li>
 <li>右键即可保存 pdf。</li>
@@ -54,7 +55,7 @@ kx)\exp{\left\{i(\omega t + kr)\frac{\omega}{k}\right\}}
 \end{equation}
 \]</span></li>
 </ul>
-<h1 id="修改了博客字体-240717">修改了博客字体-240717</h1>
+<h1 id="修改博客字体-240717">修改博客字体-240717</h1>
 <p>中文字体为 <a href="https://github.com/lxgw/LxgwWenKai">LXGW
 WenKai/霞鹜文楷</a>，英文字体为 Windows 自带的 Cambria
 Math，可以同时支持英文和公式字体。两个都为衬线字体，但是粗细过渡都很平滑，看起来挺搭。我
@@ -65,14 +66,32 @@ LaTeX 的公式字体也是 Cambria Math，这款字体看着确实挺舒服的�
 href="https://theme-next.js.org/docs/theme-settings/miscellaneous#Fonts-Customization">Next
 官方文档</a>说的，改字体只要在 _config.next.yml 文件里的 font
 一栏里改就行，但是我加上两套字体希望分别设置中英文字体却老是失败：
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global:</span><br><span class="line">  external: false</span><br><span class="line">  # family: Source Han Serif CN # 思源宋体</span><br><span class="line">  # family: Source Han Sans CN VF # 思源黑体</span><br><span class="line">  family: Cambria Math, LXGW WenKai # 英文：Cambria Math，中文：霞鹜文楷</span><br><span class="line">  # family: MiSans</span><br><span class="line">  size: 0.95</span><br></pre></td></tr></table></figure> 最后只能在 ~-deng.github.io_variables 里的 base.styl
-文件里直接改字体： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Font families.</span><br><span class="line">$font-family-chinese      = &quot;Cambria Math&quot;, &quot;LXGW WenKai&quot;, &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure></li>
-<li>除了字体以外，还改了字体颜色（base.styl） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Global text color on &lt;body&gt;</span><br><span class="line">$text-color                   = $black-dim; // origin: black-light</span><br><span class="line">$text-color-dark              = $black-light; // origin: grey-light</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">global:</span><br><span class="line">  external: false</span><br><span class="line">  # family: Source Han Serif CN # 思源宋体</span><br><span class="line">  # family: Source Han Sans CN VF # 思源黑体</span><br><span class="line">  family: Cambria Math, LXGW WenKai # 英文：Cambria Math，中文：霞鹜文楷</span><br><span class="line">  # family: MiSans</span><br><span class="line">  size: 0.95</span><br></pre></td></tr></table></figure> 最后只能在 ~\themes\next\source\css_variables 里的
+base.styl 文件里直接改字体： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Font families.</span><br><span class="line">$font-family-chinese      = &quot;Cambria Math&quot;, &quot;LXGW WenKai&quot;, &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure></li>
+<li>除了字体以外，还改了字体颜色（base.styl） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Global text color on &lt;body&gt;</span><br><span class="line">$text-color                   = $black-dim; // origin: black-light</span><br><span class="line">$text-color-dark              = $black-light; // origin: grey-light; for dark mode?</span><br></pre></td></tr></table></figure>
 和字体大小（_config.next.yml，如上）。</li>
 <li>另外记录一下命令行中打印出英文字族名称的代码（from chatGPT）:
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Add-Type -AssemblyName System.Drawing</span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts = New-Object System.Drawing.Text.InstalledFontCollection</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts.Families | Where-Object &#123; <span class="variable">$_</span>.Name -notmatch <span class="string">&quot;[\u4e00-\u9fa5]&quot;</span> &#125; | ForEach-Object &#123;</span></span><br><span class="line">    [PSCustomObject]@&#123;</span><br><span class="line">        FontFamily = $_.Name</span><br><span class="line">    &#125;</span><br><span class="line">&#125; | Format-Table -AutoSize</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h1
+id="修改博客标题和链接颜色开启阅读进度等-240718">修改博客标题和链接颜色；开启阅读进度等-240718</h1>
+<ul>
+<li><p>修改标题颜色（base.styl）： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$WildStrawberry         = #ED2367; // for title</span><br><span class="line">$CornflowerBlue         = #6395ED; // for headline</span><br></pre></td></tr></table></figure> 这两个颜色是 latex 的
+xolor 包里的颜色，用 PPT 提取的，也分别是我 latex
+模板里大标题和文内标题的颜色。但是博客里的 headline
+的颜色我暂时不知道怎么改。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$subtitle-color                 = $WildStrawberry;</span><br><span class="line">$site-subtitle-color            = $WildStrawberry;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>修改链接颜色（
+~\themes\next\source\css\_common\components\post\post.styl ）：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #ED2367; // WildStrawberry</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #B50F46; // Darker. Choosed with the help of powerpoint.</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>开启阅读进度（_config.next.yml）： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true # false</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure></p></li>
+<li><p>目录配置（_config.next.yml）： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Table of Contents in the Sidebar</span><br><span class="line"># Front-matter variable (unsupport wrap expand_all).</span><br><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  # Automatically add list number to toc.</span><br><span class="line">  number: true</span><br><span class="line">  # If true, all words will placed on next lines if header width longer then sidebar width.</span><br><span class="line">  wrap: true # false</span><br><span class="line">  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span><br><span class="line">  expand_all: true</span><br><span class="line">  # Maximum heading depth of generated toc.</span><br><span class="line">  max_depth: 6</span><br></pre></td></tr></table></figure></p></li>
+<li><p>侧边栏配置（_config.next.yml）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line"></span><br><span class="line">  # Manual define the sidebar width. If commented, will be default for:</span><br><span class="line">  # Muse | Mist: 320</span><br><span class="line">  # Pisces | Gemini: 240</span><br><span class="line">  #width: 300</span><br><span class="line">  width: 370</span><br><span class="line"></span><br><span class="line">  # Sidebar Display (only for Muse | Mist), available values:</span><br><span class="line">  #  - post    expand on posts automatically. Default.</span><br><span class="line">  #  - always  expand for all pages automatically.</span><br><span class="line">  #  - hide    expand only when click on the sidebar toggle icon.</span><br><span class="line">  #  - remove  totally remove sidebar including sidebar toggle.</span><br><span class="line">  display: post</span><br><span class="line"></span><br><span class="line">  # Sidebar padding in pixels.</span><br><span class="line">  padding: 18</span><br><span class="line">  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).</span><br><span class="line">  offset: 12</span><br><span class="line">  # Enable sidebar on narrow view (only for Muse | Mist).</span><br><span class="line">  onmobile: true # false</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>hexo-next</tag>
+      </tags>
   </entry>
   <entry>
     <title>欢迎！</title>
@@ -80,6 +99,50 @@ href="https://theme-next.js.org/docs/theme-settings/miscellaneous#Fonts-Customiz
     <content><![CDATA[<p>本博客暂时仅为私人整理用，以后会<a
 href="/2023/07/17/Hexo-Next-优化记录">慢慢完善</a>。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>CS106B，启动！</title>
+    <url>/2023/10/30/CS106B-Intro/</url>
+    <content><![CDATA[<p>课程视频：<a
+href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2020 夏</a>，<a
+href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
+站-CS106B-2018 冬</a>。</p>
+<p>辅助资料：<a
+href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
+href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
+<hr />
+<p>打算在博客记录下自己的学习
+C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
+主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
+CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
+Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
+]]></content>
+      <categories>
+        <category>CS106B</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复习中期考核时整理的笔记</title>
+    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a
+href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
+<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
+<p><a
+href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
+<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
+]]></content>
+      <categories>
+        <category>物理笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>物理</tag>
+      </tags>
   </entry>
   <entry>
     <title>plotly 作图库笔记</title>
@@ -374,41 +437,9 @@ syntax）更新。</p>
       <categories>
         <category>python 笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>CS106B，启动！</title>
-    <url>/2023/10/30/CS106B-Intro/</url>
-    <content><![CDATA[<p>课程视频：<a
-href="https://www.bilibili.com/video/BV1Hr4y137Do/?vd_source=4efd33acadc20776930caf2353235a75">b
-站-CS106B-2020 夏</a>，<a
-href="https://www.bilibili.com/video/BV1G7411k7jG/?vd_source=4efd33acadc20776930caf2353235a75">b
-站-CS106B-2018 冬</a>。</p>
-<p>辅助资料：<a
-href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS106B_CS106X/">csdiy</a>，<a
-href="https://hackway.org/docs/cs/freshman/cpp/cs106b">HackWay</a>。</p>
-<hr />
-<p>打算在博客记录下自己的学习
-C++的成长历程。选的课程应该是<code>b站-CS106B-2020夏</code>。据其他人的说法，CS106B
-主要以数据结构和抽象思维为主，略带介绍 C++的用法。学完后应该会趁热打铁把
-CS106L 给学了。借此机会，熟悉下博客各功能的使用，并且希望能完成
-Markdown（和 LaTeX ）在 vscode 的配置调整，使书写更加顺畅快捷。</p>
-]]></content>
-      <categories>
-        <category>CS106B</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>复习中期考核时整理的笔记</title>
-    <url>/2023/10/30/%E4%B8%AD%E6%9C%9F%E8%80%83%E6%A0%B8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p><a
-href="https://kdocs.cn/l/ci9RuvZtDv11">等离子体物理导论-ffchen</a></p>
-<p><a href="https://kdocs.cn/l/ckqXdeVVKL1O">量子力学-格里菲斯</a></p>
-<p><a
-href="https://kdocs.cn/l/crjBCHlJIfAi">热力学与统计力学-苏汝铿</a></p>
-<p>很惭愧到研三了才重新梳理了一遍四大力学。很多地方原来没搞清的，现在都搞清楚了。</p>
-]]></content>
-      <categories>
-        <category>物理笔记</category>
-      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>可视化</tag>
+      </tags>
   </entry>
 </search>

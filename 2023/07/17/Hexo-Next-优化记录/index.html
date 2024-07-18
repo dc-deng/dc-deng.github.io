@@ -19,19 +19,20 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"dc-deng.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"dc-deng.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":370,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="仅对官方手册（https:&#x2F;&#x2F;theme-next.js.org&#x2F;）中没有的，或出错的作一些补充。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-Next 优化记录（持续更新中...）">
 <meta property="og:url" content="https://dc-deng.github.io/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/index.html">
-<meta property="og:site_name" content="Homepage">
+<meta property="og:site_name" content="青草更青处">
 <meta property="og:description" content="仅对官方手册（https:&#x2F;&#x2F;theme-next.js.org&#x2F;）中没有的，或出错的作一些补充。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-17T15:15:13.637Z">
-<meta property="article:modified_time" content="2024-07-17T14:18:20.271Z">
-<meta property="article:author" content="dcdeng">
+<meta property="article:modified_time" content="2024-07-18T03:31:50.127Z">
+<meta property="article:author" content="邓达超">
+<meta property="article:tag" content="hexo-next">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://dc-deng.github.io/2023/07/17/Hexo-Next-%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>Hexo-Next 优化记录（持续更新中...） | Homepage</title>
+  <title>Hexo-Next 优化记录（持续更新中...） | 青草更青处</title>
   
 
 
@@ -98,10 +99,9 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Homepage</h1>
+      <h1 class="site-title">青草更青处</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">好记性不如烂笔头</p>
   </div>
 
   <div class="site-nav-right">
@@ -182,6 +182,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -200,12 +201,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/wechatProfilephoto.jpg">
-      <meta itemprop="name" content="dcdeng">
-      <meta itemprop="description" content="知识最终只会被带入土里，发现的问题和解决的方案才会留下来">
+      <meta itemprop="name" content="邓达超">
+      <meta itemprop="description" content="向青草更青处漫溯">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Homepage">
+      <meta itemprop="name" content="青草更青处">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -226,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-17 22:18:20" itemprop="dateModified" datetime="2024-07-17T22:18:20+08:00">2024-07-17</time>
+                <time title="修改时间：2024-07-18 11:31:50" itemprop="dateModified" datetime="2024-07-18T11:31:50+08:00">2024-07-18</time>
               </span>
 
           
@@ -242,14 +243,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>659</span>
+              <span>772</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
             <div class="post-description">仅对官方手册（https://theme-next.js.org/）中没有的，或出错的作一些补充。</div>
 
@@ -275,7 +276,8 @@ href="/2023/07/17/Hexo-Next-优化记录">这篇</a>，链接是：<code>/2023/0
 <p>这里将会是一个 pdf：<div class="pdfobject-container" data-target="/latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf" data-height="1200px"></div></p>
 <ul>
 <li><code>latex-notes</code>文件夹放在<code>/source</code>里，加了个<code>index.md</code>，相当于是一个“隐藏的页面”。</li>
-<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code> <div class="note warning">
+<li>插入格式类似于：<code>&#123;% pdf /latex-notes/Notes-on-classical-electrodynamics/Notes-on-classical-electrodynamics.pdf %&#125;</code>
+<div class="note warning">
             <p>路径不能出现中文！！！</p>
           </div></li>
 <li>右键即可保存 pdf。</li>
@@ -313,7 +315,7 @@ kx)\exp{\left\{i(\omega t + kr)\frac{\omega}{k}\right\}}
 \end{equation}
 \]</span></li>
 </ul>
-<h1 id="修改了博客字体-240717">修改了博客字体-240717</h1>
+<h1 id="修改博客字体-240717">修改博客字体-240717</h1>
 <p>中文字体为 <a target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKai">LXGW
 WenKai/霞鹜文楷</a>，英文字体为 Windows 自带的 Cambria
 Math，可以同时支持英文和公式字体。两个都为衬线字体，但是粗细过渡都很平滑，看起来挺搭。我
@@ -324,12 +326,27 @@ LaTeX 的公式字体也是 Cambria Math，这款字体看着确实挺舒服的�
 target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/miscellaneous#Fonts-Customization">Next
 官方文档</a>说的，改字体只要在 _config.next.yml 文件里的 font
 一栏里改就行，但是我加上两套字体希望分别设置中英文字体却老是失败：
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">global:</span><br><span class="line">  external: false</span><br><span class="line">  # family: Source Han Serif CN # 思源宋体</span><br><span class="line">  # family: Source Han Sans CN VF # 思源黑体</span><br><span class="line">  family: Cambria Math, LXGW WenKai # 英文：Cambria Math，中文：霞鹜文楷</span><br><span class="line">  # family: MiSans</span><br><span class="line">  size: 0.95</span><br></pre></td></tr></table></figure> 最后只能在 ~-deng.github.io_variables 里的 base.styl
-文件里直接改字体： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Font families.</span><br><span class="line">$font-family-chinese      = &quot;Cambria Math&quot;, &quot;LXGW WenKai&quot;, &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure></li>
-<li>除了字体以外，还改了字体颜色（base.styl） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Global text color on &lt;body&gt;</span><br><span class="line">$text-color                   = $black-dim; // origin: black-light</span><br><span class="line">$text-color-dark              = $black-light; // origin: grey-light</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">global:</span><br><span class="line">  external: false</span><br><span class="line">  # family: Source Han Serif CN # 思源宋体</span><br><span class="line">  # family: Source Han Sans CN VF # 思源黑体</span><br><span class="line">  family: Cambria Math, LXGW WenKai # 英文：Cambria Math，中文：霞鹜文楷</span><br><span class="line">  # family: MiSans</span><br><span class="line">  size: 0.95</span><br></pre></td></tr></table></figure> 最后只能在 ~\themes\next\source\css_variables 里的
+base.styl 文件里直接改字体： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Font families.</span><br><span class="line">$font-family-chinese      = &quot;Cambria Math&quot;, &quot;LXGW WenKai&quot;, &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure></li>
+<li>除了字体以外，还改了字体颜色（base.styl） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Global text color on &lt;body&gt;</span><br><span class="line">$text-color                   = $black-dim; // origin: black-light</span><br><span class="line">$text-color-dark              = $black-light; // origin: grey-light; for dark mode?</span><br></pre></td></tr></table></figure>
 和字体大小（_config.next.yml，如上）。</li>
 <li>另外记录一下命令行中打印出英文字族名称的代码（from chatGPT）:
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Add-Type -AssemblyName System.Drawing</span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts = New-Object System.Drawing.Text.InstalledFontCollection</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">fonts.Families | Where-Object &#123; <span class="variable">$_</span>.Name -notmatch <span class="string">&quot;[\u4e00-\u9fa5]&quot;</span> &#125; | ForEach-Object &#123;</span></span><br><span class="line">    [PSCustomObject]@&#123;</span><br><span class="line">        FontFamily = $_.Name</span><br><span class="line">    &#125;</span><br><span class="line">&#125; | Format-Table -AutoSize</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1
+id="修改博客标题和链接颜色开启阅读进度等-240718">修改博客标题和链接颜色；开启阅读进度等-240718</h1>
+<ul>
+<li><p>修改标题颜色（base.styl）： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$WildStrawberry         = #ED2367; // for title</span><br><span class="line">$CornflowerBlue         = #6395ED; // for headline</span><br></pre></td></tr></table></figure> 这两个颜色是 latex 的
+xolor 包里的颜色，用 PPT 提取的，也分别是我 latex
+模板里大标题和文内标题的颜色。但是博客里的 headline
+的颜色我暂时不知道怎么改。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$subtitle-color                 = $WildStrawberry;</span><br><span class="line">$site-subtitle-color            = $WildStrawberry;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>修改链接颜色（
+~\themes\next\source\css\_common\components\post\post.styl ）：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #ED2367; // WildStrawberry</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #B50F46; // Darker. Choosed with the help of powerpoint.</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>开启阅读进度（_config.next.yml）： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true # false</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure></p></li>
+<li><p>目录配置（_config.next.yml）： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Table of Contents in the Sidebar</span><br><span class="line"># Front-matter variable (unsupport wrap expand_all).</span><br><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  # Automatically add list number to toc.</span><br><span class="line">  number: true</span><br><span class="line">  # If true, all words will placed on next lines if header width longer then sidebar width.</span><br><span class="line">  wrap: true # false</span><br><span class="line">  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span><br><span class="line">  expand_all: true</span><br><span class="line">  # Maximum heading depth of generated toc.</span><br><span class="line">  max_depth: 6</span><br></pre></td></tr></table></figure></p></li>
+<li><p>侧边栏配置（_config.next.yml）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line"></span><br><span class="line">  # Manual define the sidebar width. If commented, will be default for:</span><br><span class="line">  # Muse | Mist: 320</span><br><span class="line">  # Pisces | Gemini: 240</span><br><span class="line">  #width: 300</span><br><span class="line">  width: 370</span><br><span class="line"></span><br><span class="line">  # Sidebar Display (only for Muse | Mist), available values:</span><br><span class="line">  #  - post    expand on posts automatically. Default.</span><br><span class="line">  #  - always  expand for all pages automatically.</span><br><span class="line">  #  - hide    expand only when click on the sidebar toggle icon.</span><br><span class="line">  #  - remove  totally remove sidebar including sidebar toggle.</span><br><span class="line">  display: post</span><br><span class="line"></span><br><span class="line">  # Sidebar padding in pixels.</span><br><span class="line">  padding: 18</span><br><span class="line">  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).</span><br><span class="line">  offset: 12</span><br><span class="line">  # Enable sidebar on narrow view (only for Muse | Mist).</span><br><span class="line">  onmobile: true # false</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
@@ -341,6 +358,9 @@ target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settin
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo-next/" rel="tag"># hexo-next</a>
+          </div>
 
         
 
@@ -413,16 +433,16 @@ target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settin
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E7%AB%99%E7%82%B9%E5%86%85%E9%83%A8-page-%E7%9A%84%E9%93%BE%E6%8E%A5%E5%BC%95%E7%94%A8-230718"><span class="nav-number">1.</span> <span class="nav-text">对站点内部 page
 的链接引用-230718</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-pdf-230717"><span class="nav-number">2.</span> <span class="nav-text">添加 pdf-230717</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-wps-%E7%BD%91%E7%9B%98%E8%BF%9B%E8%A1%8C-pdf-%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB-230720"><span class="nav-number">3.</span> <span class="nav-text">使用 wps 网盘进行 pdf
-文件分享-230720</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2"><span class="nav-number">4.</span> <span class="nav-text">多台电脑同步更新博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">数学公式测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%BA%86%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93-240717"><span class="nav-number">6.</span> <span class="nav-text">修改了博客字体-240717</span></a></li></ol></div>
+文件分享-230720</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2"><span class="nav-number">4.</span> <span class="nav-text">多台电脑同步更新博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">数学公式测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93-240717"><span class="nav-number">6.</span> <span class="nav-text">修改博客字体-240717</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E6%A0%87%E9%A2%98%E5%92%8C%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%BC%80%E5%90%AF%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E7%AD%89-240718"><span class="nav-number">7.</span> <span class="nav-text">修改博客标题和链接颜色；开启阅读进度等-240718</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="dcdeng"
+    <img class="site-author-image" itemprop="image" alt="邓达超"
       src="/images/wechatProfilephoto.jpg">
-  <p class="site-author-name" itemprop="name">dcdeng</p>
-  <div class="site-description" itemprop="description">知识最终只会被带入土里，发现的问题和解决的方案才会留下来</div>
+  <p class="site-author-name" itemprop="name">邓达超</p>
+  <div class="site-description" itemprop="description">向青草更青处漫溯</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -438,6 +458,12 @@ target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settin
           
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -470,7 +496,7 @@ target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settin
   <span class="with-love">
     <i class="fa fa-fish"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">dcdeng</span>
+  <span class="author" itemprop="copyrightHolder">邓达超</span>
 </div>
 
 
