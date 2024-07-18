@@ -2,7 +2,7 @@
 title: Hexo-Next 优化记录（持续更新中...）
 description: 仅对官方手册（https://theme-next.js.org/）中没有的，或出错的作一些补充。
 categories:
-tags:
+tags: [hexo-next]
 sticky: 0
 ---
 
@@ -55,7 +55,7 @@ pdf 插入测试：
   \end{equation}
   $$
 
-# 修改了博客字体-240717
+# 修改博客字体-240717
 
 中文字体为 [LXGW WenKai/霞鹜文楷](https://github.com/lxgw/LxgwWenKai)，英文字体为 Windows 自带的 Cambria Math，可以同时支持英文和公式字体。两个都为衬线字体，但是粗细过渡都很平滑，看起来挺搭。我 LaTeX 的公式字体也是 Cambria Math，这款字体看着确实挺舒服的。
 
@@ -71,7 +71,7 @@ pdf 插入测试：
     # family: MiSans
     size: 0.95
   ```
-  最后只能在 ~\dc-deng.github.io\themes\next\source\css_variables 里的 base.styl 文件里直接改字体：
+  最后只能在 ~\\themes\\next\\source\\css_variables 里的 base.styl 文件里直接改字体：
   ```
   // Font families.
   $font-family-chinese      = "Cambria Math", "LXGW WenKai", "Microsoft YaHei";
@@ -80,7 +80,7 @@ pdf 插入测试：
   ```
   // Global text color on <body>
   $text-color                   = $black-dim; // origin: black-light
-  $text-color-dark              = $black-light; // origin: grey-light
+  $text-color-dark              = $black-light; // origin: grey-light; for dark mode?
   ```
   和字体大小（\_config.next.yml，如上）。
 - 另外记录一下命令行中打印出英文字族名称的代码（from chatGPT）:
@@ -92,4 +92,81 @@ pdf 插入测试：
           FontFamily = $_.Name
       }
   } | Format-Table -AutoSize
+  ```
+
+# 修改博客标题和链接颜色；开启阅读进度等-240718
+
+- 修改标题颜色（base.styl）：
+  ```
+  $WildStrawberry         = #ED2367; // for title
+  $CornflowerBlue         = #6395ED; // for headline
+  ```
+  这两个颜色是 latex 的 xolor 包里的颜色，用 PPT 提取的，也分别是我 latex 模板里大标题和文内标题的颜色。但是博客里的 headline 的颜色我暂时不知道怎么改。
+  ```
+  $subtitle-color                 = $WildStrawberry;
+  $site-subtitle-color            = $WildStrawberry;
+  ```
+- 修改链接颜色（ ~\\themes\\next\\source\\css\\\_common\\components\\post\\post.styl ）：
+  ```
+  .post-body p a{
+    color: #ED2367; // WildStrawberry
+    border-bottom: none;
+    &:hover {
+      color: #B50F46; // Darker. Choosed with the help of powerpoint.
+      text-decoration: underline;
+    }
+  }
+  ```
+- 开启阅读进度（\_config.next.yml）：
+  ```
+  # Reading progress bar
+  reading_progress:
+    enable: true # false
+    # Available values: top | bottom
+    position: top
+    color: "#37c6c0"
+    height: 3px
+  ```
+- 目录配置（\_config.next.yml）：
+  ```
+  # Table of Contents in the Sidebar
+  # Front-matter variable (unsupport wrap expand_all).
+  toc:
+    enable: true
+    # Automatically add list number to toc.
+    number: true
+    # If true, all words will placed on next lines if header width longer then sidebar width.
+    wrap: true # false
+    # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+    expand_all: true
+    # Maximum heading depth of generated toc.
+    max_depth: 6
+  ```
+- 侧边栏配置（\_config.next.yml）：
+
+  ```
+  sidebar:
+    # Sidebar Position.
+    position: left
+    #position: right
+
+    # Manual define the sidebar width. If commented, will be default for:
+    # Muse | Mist: 320
+    # Pisces | Gemini: 240
+    #width: 300
+    width: 370
+
+    # Sidebar Display (only for Muse | Mist), available values:
+    #  - post    expand on posts automatically. Default.
+    #  - always  expand for all pages automatically.
+    #  - hide    expand only when click on the sidebar toggle icon.
+    #  - remove  totally remove sidebar including sidebar toggle.
+    display: post
+
+    # Sidebar padding in pixels.
+    padding: 18
+    # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+    offset: 12
+    # Enable sidebar on narrow view (only for Muse | Mist).
+    onmobile: true # false
   ```

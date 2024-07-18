@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Homepage
-subtitle: 好记性不如烂笔头
-description: 知识最终只会被带入土里，发现的问题和解决的方案才会留下来
+title: 青草更青处
+subtitle:
+description: 向青草更青处漫溯
 keywords:
-author: dcdeng
+author: 邓达超
 language:
   - zh-CN
 timezone: Asia/Shanghai
